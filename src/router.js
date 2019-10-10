@@ -36,10 +36,21 @@ const router = new Router({
           path: 'dashboard',
           name: 'dashboard',
           component: () => import('./views/Dashboard.vue'),
+        },
+        {
+          path: 'about',
+          name: 'about',
+          component: () => import('./views/About.vue'),
+        },
+        {
+          path: 'rutinas',
+          name: 'rutinas',
+          component: () => import('./views/Rutinas.vue'),
         }
       ],
     }
-  ]
+  ],
+  mode: "history"
 });
 
 router.beforeEach((to, from, next) => {

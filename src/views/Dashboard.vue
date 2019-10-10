@@ -23,7 +23,7 @@
               </v-flex>
             </v-layout>
           </v-flex>
-          <!-- número de vacas, visible en md and down -->
+          <!-- número de usuario, visible en md and down -->
           <v-flex
             hidden-lg-and-up
             hidden-xs-only
@@ -34,8 +34,8 @@
               dark
               style="font-family: Cabin, sans-serif;"
             >
-              <v-card-title style="font-size: 35px">104</v-card-title>
-              <v-card-text style="font-size: 18px">Animales en sistema</v-card-text>
+              <v-card-title style="font-size: 35px">A0163088</v-card-title>
+              <v-card-text style="font-size: 18px">Alumno</v-card-text>
             </v-card>
           </v-flex>
         </v-layout>
@@ -55,14 +55,14 @@
             color="blue darken-4"
             rounded>
             <v-icon left>mdi-cow</v-icon>
-            agregar
+            Rutinas
           </v-btn>
           <v-btn
             depressed
             to="/apphome/paddockform"
             dark
             color="blue darken-4"
-            rounded><v-icon left>mdi-barn</v-icon>agregar</v-btn>
+            rounded><v-icon left>mdi-barn</v-icon>Semana</v-btn>
         </v-layout>
       </v-flex>
       <!-- cards -->
@@ -90,13 +90,13 @@
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Ganado</v-list-item-title>
+                    class="dashboard-header-card">Pierna</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">280 en total</v-list-item-subtitle>
+                    class="dashboard-sub-card">Lunes</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
-                    class="dashboard-sub-card">Animales en sistema</v-list-item-subtitle>
+                    class="dashboard-sub-card">Rutina de Pierna</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-text
@@ -140,13 +140,13 @@
             >
               <v-list-item two-line>
                 <v-list-item-content>
-                  <v-list-item-title class="dashboard-header-card">Vacas en celo</v-list-item-title>
+                  <v-list-item-title class="dashboard-header-card">HIIT</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">12 animales hace 2 días</v-list-item-subtitle>
+                    class="dashboard-sub-card">Día 1</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
-                    class="dashboard-sub-card">Animales en sistema</v-list-item-subtitle>
+                    class="dashboard-sub-card">Rutinas en el Sistema</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-text class="dashboard-text-spacer">
@@ -176,7 +176,7 @@
                     step="1"
                     :max="5"
                     thumb-label="always"
-                    label="Días atrás"
+                    label="Inicio"
                     ticks="always"
                     tick-size="4"
                   >
@@ -190,9 +190,7 @@
               </v-flex>
               <v-flex hidden-xs-only>
                 <v-card-text class="dashboard-card-text">
-                  Al confirmar una inseminación durante los primeros días
-                  incrementará la productividad de tu establo. Puedes mover el selector
-                  de acuerdo a los dias que necesites revisar a tus animales.
+                  Descripción del Ejercicio
                 </v-card-text>
               </v-flex>
             </v-card>
@@ -215,9 +213,9 @@
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Ganancias</v-list-item-title>
+                    class="dashboard-header-card">Progreso</v-list-item-title>
                   <v-list-item-subtitle
-                    class="dashboard-sub-card">Ganancias del control del ganado
+                    class="dashboard-sub-card">Progreso
                   </v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
@@ -241,8 +239,7 @@
               </v-card-text>
               <v-flex>
                 <v-card-text class="dashboard-card-text">
-                  De acuerdo a los datos proporcionados,
-                  recuerda que esto puede variar según el uso de esta aplicación.
+                  Descripción del Ejercicio
                 </v-card-text>
               </v-flex>
             </v-card>
@@ -272,8 +269,8 @@
                     dark
                     style="font-family: Cabin, sans-serif;"
                   >
-                    <v-card-title style="font-size: 35px">104</v-card-title>
-                    <v-card-text style="font-size: 18px">Animales en sistema</v-card-text>
+                    <v-card-title style="font-size: 35px">A0163088</v-card-title>
+                    <v-card-text style="font-size: 18px">Alumno</v-card-text>
                   </v-card>
                 </v-layout>
               </v-flex>
@@ -289,20 +286,20 @@
                   <v-list-item two-line>
                     <v-list-item-content>
                       <v-list-item-title
-                        class="dashboard-header-card">Ganancias del rancho</v-list-item-title>
+                        class="dashboard-header-card">Progreso</v-list-item-title>
                       <v-list-item-subtitle
-                        class="dashboard-sub-card">Ganancias del control del ganado
+                        class="dashboard-sub-card">Calorías Quemadas
                       </v-list-item-subtitle>
                     </v-list-item-content>
                   </v-list-item>
                   <v-card-text>
                     <v-layout align-center>
                       <v-flex xs10 id="revenues-number">
-                        250,000.00
+                        818 kcal
                       </v-flex>
                       <v-flex xs2>
                         <v-img
-                          src="https://img.icons8.com/cotton/2x/money.png"
+                          src="https://img.icons8.com/cotton/2x/exercise.png"
                           alt="Sunny image"
                           width="92"
                         ></v-img>
@@ -310,9 +307,7 @@
                     </v-layout>
                   </v-card-text>
                   <v-card-text class="dashboard-card-text">
-                    De acuerdo a los datos proporcionados,
-                    recuerda que esto variará en función a lo bien
-                    que sigues el control de tu ganado.
+                    De acuerdo a los datos proporcionados.
                   </v-card-text>
                 </v-card>
               </v-flex>
@@ -337,13 +332,13 @@
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">DIM</v-list-item-title>
+                    class="dashboard-header-card">Pierna</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">190 días</v-list-item-subtitle>
+                    class="dashboard-sub-card">12 días</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
-                    class="dashboard-sub-card">Días en leche promedio</v-list-item-subtitle>
+                    class="dashboard-sub-card">Cuádricep y Gastrognemios</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-text
@@ -356,7 +351,7 @@
                     class="dashboard-card-number"
                     hidden-xs-only
                     >
-                    103
+                    5
                   </v-flex>
                   <v-flex xs2>
                     <v-img
@@ -369,8 +364,7 @@
               </v-card-text>
               <v-flex hidden-xs-only>
                 <v-card-text class="dashboard-card-text">
-                  Estos son los días en promedio que todas tus vacas
-                  producen algo de leche. Entre más alto, mejor.
+                  Ejercicios por rutina
                 </v-card-text>
               </v-flex>
             </v-card>
@@ -394,13 +388,13 @@
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Enfermas</v-list-item-title>
+                    class="dashboard-header-card">Espalda</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">280 actualmente</v-list-item-subtitle>
+                    class="dashboard-sub-card">4</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
-                    class="dashboard-sub-card">Animales improductivos</v-list-item-subtitle>
+                    class="dashboard-sub-card">Lumbares</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-text
@@ -412,7 +406,7 @@
                     xs10
                     class="dashboard-card-number"
                     hidden-xs-only>
-                  16
+                  2
                   </v-flex>
                   <v-flex xs2>
                     <v-img
@@ -425,8 +419,7 @@
               </v-card-text>
               <v-flex hidden-xs-only>
                 <v-card-text class="dashboard-card-text">
-                  Entre más rápidamente salga una vaca de alguna enfermedad esta
-                  producirá más para tí.
+                  Prevenir lesiones y fortalecer el core
                 </v-card-text>
               </v-flex>
             </v-card>
@@ -448,13 +441,13 @@
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Gestantes</v-list-item-title>
+                    class="dashboard-header-card">Brazo</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">150 actualmente</v-list-item-subtitle>
+                    class="dashboard-sub-card">6</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
-                    class="dashboard-sub-card">Animales preñados</v-list-item-subtitle>
+                    class="dashboard-sub-card">Bíceps y Tríceps</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-text
@@ -480,8 +473,7 @@
               </v-card-text>
               <v-flex hidden-xs-only>
                 <v-card-text class="dashboard-card-text">
-                  Si confirmas que una de tus vacas está preñada no te volverás
-                  a preocupar hasta el día del parto.
+                  Hipertrofia muscular
                 </v-card-text>
               </v-flex>
             </v-card>
@@ -524,7 +516,7 @@ export default {
       'mdi-numeric-5-circle',
     ],
     subtitle: {
-      mobile: '¿Qué se cuece hoy?',
+      mobile: 'Go Big or Go Home!',
     },
   }),
   methods: {

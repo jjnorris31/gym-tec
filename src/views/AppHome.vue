@@ -61,7 +61,7 @@
         <span
           class="blue--text text--darken-4">104</span>
       </v-avatar>
-      <!-- botón de cambiar de rancho versión móvil -->
+      <!-- botón de cambiar a versión móvil -->
       <v-menu bottom left>
         <template v-slot:activator="{ on }">
           <v-btn
@@ -81,7 +81,7 @@
           </v-list-item>
         </v-list>
       </v-menu>
-      <!-- fin de botón de cambiar de rancho versión móvil -->
+      <!-- fin de botón de cambiar versión móvil -->
     </v-app-bar>
     <!-- fin de barra superior -->
     <!-- sección principal -->
@@ -107,17 +107,14 @@ export default {
     drawer: false, // controla la visibilidad del navigation drawer
     items: [
       { title: 'Dashboard', icon: 'mdi-view-dashboard', route: '/dashboard' },
-      { title: 'Ganado', icon: 'mdi-cow' },
-      { title: 'Grupos', icon: 'mdi-alpha-g' },
-      { title: 'Alertas', icon: 'mdi-bell-ring' },
+      { title: 'Rutinas', icon: 'mdi-calendar-today' },
+      { title: 'Clases', icon: 'mdi-alarm' },
+      { title: 'Recordatorios', icon: 'mdi-bell-ring' },
       { title: 'Cuenta', icon: 'mdi-account-details' },
       { title: 'Configuración', icon: 'mdi-tune' },
     ],
   }),
   methods: {
-    /**
-     * Método que permite cambiar el rancho
-     */
     changePaddock(index) {
       const payload = { userPaddockSelected: this.$store.getters.getPaddocks[index].name };
       this.$store.dispatch('changeLastPaddockSelected', payload);

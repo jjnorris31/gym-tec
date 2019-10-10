@@ -43,18 +43,19 @@
               >
               <v-layout
                 column
-                center
+                align-center
                 class="app-default-font">
                 <h1
                   v-if="$vuetify.breakpoint.mdAndUp"
-                  class="white--text">Ve al gimnasio. Mejor.</h1>
+                  class="white--text">Ve al mejor gimnasio</h1>
                 <h1
                   v-if="$vuetify.breakpoint.smAndDown"
                   mt-4
                   class="white--text">GymTec+</h1>
                 <p
                   class="login-sub-text blue-grey--text text--lighten-5">
-                  Déjanos ayudarte a descubrir tu máximo potencial.</p>
+                  Descubre tu máximo potencial
+                </p>
                 <!-- contenedor de las tabs -->
                 <v-flex mb-4>
                   <v-tabs
@@ -114,7 +115,7 @@
                                 color="blue darken-4"
                                 @click="signIn"
                                 depressed
-                                block>login</v-btn>
+                                block>Login</v-btn>
                             </v-flex>
                             <v-flex xs7>
                               <v-layout>
