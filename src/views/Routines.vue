@@ -211,7 +211,7 @@
                             </v-flex>
                         </v-layout>
                     </v-flex>
-                    <!-- card días en leche -->
+                    <!-- HIPERTROFIA -->
                     <v-flex
                             lg4
                             md5

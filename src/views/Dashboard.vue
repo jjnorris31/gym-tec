@@ -54,7 +54,7 @@
             dark
             color="blue darken-4"
             rounded>
-            <v-icon left>mdi-cow</v-icon>
+            <v-icon left>mdi-clipboard-account</v-icon>
             Mi rutina
           </v-btn>
           <v-btn
@@ -62,7 +62,7 @@
             to="/apphome/paddockform"
             dark
             color="blue darken-4"
-            rounded><v-icon left>mdi-barn</v-icon>Progreso</v-btn>
+            rounded><v-icon left>mdi-progress-clock</v-icon>Progreso</v-btn>
         </v-layout>
       </v-flex>
       <!-- cards -->
@@ -114,7 +114,7 @@
                   </v-flex>
                   <v-flex xs6>
                     <v-img
-                      src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                      src="../bike.png"
                       alt="Sunny image"
                       :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                     ></v-img>
@@ -162,7 +162,7 @@
                   </v-flex>
                   <v-flex xs2 hidden-xs-only>
                     <v-img
-                      src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                      src="../bike.png"
                       alt="Sunny image"
                       :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                     ></v-img>
@@ -357,7 +357,7 @@
                   </v-flex>
                   <v-flex xs2>
                     <v-img
-                      src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                      src="../pgs.png"
                       alt="Sunny image"
                       :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                     ></v-img>
@@ -413,7 +413,7 @@
                   </v-flex>
                   <v-flex xs2>
                     <v-img
-                      src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                      src="../food.png"
                       alt="Sunny image"
                       :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                     ></v-img>
@@ -468,7 +468,7 @@
                   </v-flex>
                   <v-flex xs2>
                     <v-img
-                      src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                      src="../trx.png"
                       alt="Sunny image"
                       :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                     ></v-img>

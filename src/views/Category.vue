@@ -76,7 +76,7 @@
                                     </v-flex>
                                     <v-flex xs6>
                                         <v-img
-                                                src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                                                src="../dumbell.png"
                                                 alt="Sunny image"
                                                 :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                                         ></v-img>
