@@ -127,14 +127,14 @@ export default {
     },
   },
   created() {
-    this.$store.dispatch('loadLastPaddockSelected').then(() => {
+    /*this.$store.dispatch('loadLastPaddockSelected').then(() => {
       // eslint-disable-next-line
       console.log('last paddock selected event dispatched');
     });
     this.$store.dispatch('fireListenUserPaddocks').then(() => {
       // eslint-disable-next-line
       console.log('paddocks listed event dispatched');
-    });
+    });*/
   },
 };
 </script>

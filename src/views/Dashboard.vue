@@ -12,7 +12,7 @@
             class="dashboard-header-container">
             <v-layout column>
               <v-flex>
-                <h1 class="app-header">Hola, JuanJo</h1>
+                <h1 class="app-header">Hola, {{currentUser}}</h1>
                 <p
                   v-if="$vuetify.breakpoint.xsOnly"
                   class="app-header-sub grey--text text--darken-3"> {{ subtitle.mobile }}</p>
@@ -489,6 +489,8 @@
 </template>
 
 <script>
+
+
 export default {
   name: 'Dashboard',
   computed: {
@@ -522,6 +524,7 @@ export default {
     subtitle: {
       mobile: 'Go big or go home!',
     },
+    currentUser: 'JuanJo',
   }),
   methods: {
     season(val) {
@@ -529,8 +532,14 @@ export default {
     },
     fowardRoutines(){
       this.$store.dispatch('goRoutines');
-    }
+    },
   },
+  mounted() {
+    if(this.$store.state.user){
+      this.currentUser = this.$store.state.user.user.email;
+    }
+    
+  }
 };
 </script>
 
