@@ -9,8 +9,11 @@
   "dependencies": {
     "core-js": "^2.6.5",
     "dns": "^0.2.2",
+    "express": "^4.17.1",
     "firebase": "^7.1.0",
     "http2": "^3.3.7",
+    "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.0",
     "vue": "^2.6.10",
     "vue-flip": "^0.3.0",
     "vue-router": "^3.0.3",

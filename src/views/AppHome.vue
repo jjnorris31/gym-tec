@@ -59,7 +59,7 @@
       <v-avatar color="white"
                 style="font-family: Cabin, sans-serif; font-size: 20px">
         <span
-          class="blue--text text--darken-4">104</span>
+          class="blue--text text--darken-4"></span>
       </v-avatar>
       <!-- botón de cambiar a versión móvil -->
       <v-menu bottom left>
