@@ -90,6 +90,9 @@ export default new Vuex.Store({
       let tempObject = {somePlan: updateObject};
       planRef.update(tempObject);
     },
+    goRoutine(){
+      router.push('/apphome/routine');
+    },
     goRoutines() {
       router.push('/apphome/routines');
     },

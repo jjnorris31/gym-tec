@@ -282,6 +282,7 @@
                                 :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
                                 color="grey lighten-3"
                                 flat
+                                @click="loadCategory('Definición')"
                         >
                             <v-list-item two-line>
                                 <v-list-item-content>
@@ -324,10 +325,16 @@
                     </v-flex>
                 </v-layout>
             </v-flex>
+
             <div class="text-center">
                 <v-btn @click="back" class="mx-2" fab dark color="light-blue darken-1">
                     <v-icon dark>mdi-arrow-left</v-icon>
                 </v-btn>
+
+                <v-btn @click="createRoutine" relative dark fab top right color="pink">
+                <v-icon>mdi-plus</v-icon>
+                </v-btn>
+          
             </div>
         </v-layout>
     </v-container>
@@ -352,6 +359,9 @@
             },
             back() {
                 this.$router.go(-1)
+            },
+            createRoutine() {
+                this.$store.dispatch('goRoutine');
             }
         },
     };
