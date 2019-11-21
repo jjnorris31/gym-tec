@@ -7,6 +7,7 @@ import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = false;
 
+
 firebase.auth.onAuthStateChanged((user) => {
   new Vue({
     store,

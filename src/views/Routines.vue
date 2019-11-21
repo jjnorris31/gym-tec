@@ -14,12 +14,7 @@
                             <v-flex>
                                 <h1 class="app-header">Rutinas</h1>
                                 <p
-                                        v-if="$vuetify.breakpoint.xsOnly"
                                         class="app-header-sub grey--text text--darken-3"> Aquí están todos los planes disponibles.</p>
-                                <p
-                                        v-else
-                                        class="app-header-sub grey--text text--darken-3">
-                                    {{ paddockSelected }}</p>
                             </v-flex>
                         </v-layout>
                     </v-flex>
@@ -61,6 +56,7 @@
                                 :max-height="$vuetify.breakpoint.xsOnly ? 150 : 1240"
                                 color="grey lighten-3"
                                 flat
+                                @click="loadCategory('beginner')"
                         >
                             <v-list-item two-line>
                                 <v-list-item-content>
@@ -88,7 +84,7 @@
                                     </v-flex>
                                     <v-flex xs6>
                                         <v-img
-                                                src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                                                src="../principiante.png"
                                                 alt="Sunny image"
                                                 :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                                         ></v-img>
@@ -229,6 +225,7 @@
                                 :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
                                 color="grey lighten-3"
                                 flat
+                                @click="loadCategory('Hipertrofia')"
                         >
                             <v-list-item two-line>
                                 <v-list-item-content>
@@ -256,7 +253,7 @@
                                     </v-flex>
                                     <v-flex xs2>
                                         <v-img
-                                                src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                                                src="../hipertrofia.png"
                                                 alt="Sunny image"
                                                 :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                                         ></v-img>
@@ -311,7 +308,7 @@
                                     </v-flex>
                                     <v-flex xs2>
                                         <v-img
-                                                src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
+                                                src="../misc.png"
                                                 alt="Sunny image"
                                                 :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
                                         ></v-img>
@@ -327,6 +324,11 @@
                     </v-flex>
                 </v-layout>
             </v-flex>
+            <div class="text-center">
+                <v-btn @click="back" class="mx-2" fab dark color="light-blue darken-1">
+                    <v-icon dark>mdi-arrow-left</v-icon>
+                </v-btn>
+            </div>
         </v-layout>
     </v-container>
 </template>
@@ -340,36 +342,17 @@
             },
         },
         data: () => ({
-            showHeatText: false,
-            showGestationText: false,
-            showSickText: false,
-            showEarningsText: false,
-            showDimText: false,
-            dayHeat: '',
-            days: [
-                'Hoy',
-                'Ayer',
-                'Hace 3 días',
-                'Hace 4 días',
-                'Hace 5 días',
-                'Hace 6 días',
-            ],
-            icons: [
-                'mdi-numeric-0-circle',
-                'mdi-numeric-1-circle',
-                'mdi-numeric-2-circle',
-                'mdi-numeric-3-circle',
-                'mdi-numeric-4-circle',
-                'mdi-numeric-5-circle',
-            ],
-            subtitle: {
-                mobile: 'Go big or go home!',
-            },
         }),
         methods: {
-            season(val) {
-                return this.icons[val];
+            loadCategory(routine) {
+                const payload = {
+                    routineSelected: routine
+                };
+                this.$store.dispatch('selectRoutine', payload);
             },
+            back() {
+                this.$router.go(-1)
+            }
         },
     };
 </script>

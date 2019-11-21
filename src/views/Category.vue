@@ -12,7 +12,7 @@
                             class="dashboard-header-container">
                         <v-layout column>
                             <v-flex>
-                                <h1 class="app-header">Categorías</h1>
+                                <h1 class="app-header">{{ routine }}</h1>
                                 <p
                                         v-if="$vuetify.breakpoint.xsOnly"
                                         class="app-header-sub grey--text text--darken-3">¿Nunca has entrenado con pesas? Entonces
@@ -20,24 +20,9 @@
                                 <p
                                         v-else
                                         class="app-header-sub grey--text text--darken-3">
-                                    {{ paddockSelected }}</p>
+                                    {{ categories }}</p>
                             </v-flex>
                         </v-layout>
-                    </v-flex>
-                    <!-- número de usuario, visible en md and down -->
-                    <v-flex
-                            hidden-lg-and-up
-                            hidden-xs-only
-                            align-self-center>
-                        <v-card
-                                flat
-                                color="primary"
-                                dark
-                                style="font-family: Cabin, sans-serif;"
-                        >
-                            <v-card-title style="font-size: 35px">A0163088</v-card-title>
-                            <v-card-text style="font-size: 18px">Alumno</v-card-text>
-                        </v-card>
                     </v-flex>
                 </v-layout>
             </v-flex>
@@ -52,12 +37,14 @@
                     <!-- card animales en sistema -->
                     <v-flex
                             lg3
+                            v-for="(category, index) in categories"
                             md4
                             sm12
                             xs12
                             mb-4
                             hidden-sm-and-up>
                         <v-card
+                                @click="setExercises(category, index)"
                                 :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
                                 :max-height="$vuetify.breakpoint.xsOnly ? 150 : 1240"
                                 color="grey lighten-3"
@@ -66,10 +53,10 @@
                             <v-list-item two-line>
                                 <v-list-item-content>
                                     <v-list-item-title
-                                            class="dashboard-header-card">Principiantes</v-list-item-title>
+                                            class="dashboard-header-card">{{category[0]}}</v-list-item-title>
                                     <v-list-item-subtitle
                                             v-if="$vuetify.breakpoint.xsOnly"
-                                            class="dashboard-sub-card">Si nunca has entrenado con pesas, este plan es para tí.</v-list-item-subtitle>
+                                            class="dashboard-sub-card">{{category[1]}}</v-list-item-subtitle>
                                     <v-list-item-subtitle
                                             v-else
                                             class="dashboard-sub-card">Guía</v-list-item-subtitle>
@@ -98,236 +85,13 @@
                             </v-card-text>
                         </v-card>
                     </v-flex>
-                    <!-- card de ganancias, versión sm y md -->
-                    <v-flex
-                            lg5
-                            md5
-                            order-md2
-                            order-sm2
-                            sm12
-                            hidden-lg-and-up
-                            hidden-xs-only
-                            :mb-4="$vuetify.breakpoint.smAndUp">
-                        <v-card
-                                :min-width="$vuetify.breakpoint.smAndUp ? 360 : 100"
-                                color="grey lighten-3"
-                                flat
-                        >
-                            <v-list-item two-line>
-                                <v-list-item-content>
-                                    <v-list-item-title
-                                            class="dashboard-header-card">Progreso</v-list-item-title>
-                                    <v-list-item-subtitle
-                                            class="dashboard-sub-card">Progreso
-                                    </v-list-item-subtitle>
-                                </v-list-item-content>
-                            </v-list-item>
-                            <v-card-text
-                                    class="dashboard-card-graphics">
-                                <v-layout
-                                        align-center>
-                                    <v-flex
-                                            xs10
-                                            class="dashboard-card-number">
-                                        10
-                                    </v-flex>
-                                    <v-flex xs2>
-                                        <v-img
-                                                src="https://img.icons8.com/cotton/2x/money.png"
-                                                alt="Sunny image"
-                                                :width="92"
-                                        ></v-img>
-                                    </v-flex>
-                                </v-layout>
-                            </v-card-text>
-                            <v-flex>
-                                <v-card-text class="dashboard-card-text">
-                                    Descripción del Ejercicio
-                                </v-card-text>
-                            </v-flex>
-                        </v-card>
-                    </v-flex>
-                    <!-- contenedor de número de vacas, collares y ganancias, versión lg and up -->
-                    <v-flex
-                            lg6
-                            md12
-                            :pl-2="$vuetify.breakpoint.lgAndUp"
-                            order-sm2
-                            mb-4
-                            hidden-md-and-down>
-                        <v-layout
-                                fill-height
-                                justify-space-between
-                                :column="$vuetify.breakpoint.lgAndUp"
-                                :row="$vuetify.breakpoint.mdAndDown">
-                            <!-- collares y número de vacas -->
-                            <v-flex lg6>
-                                <v-layout
-                                        row>
-                                    <v-card
-                                            min-width="95%"
-                                            class="mx-auto"
-                                            flat
-                                            color="blue darken-4"
-                                            dark
-                                            style="font-family: Cabin, sans-serif;"
-                                    >
-                                        <v-card-title style="font-size: 35px">A0163088</v-card-title>
-                                        <v-card-text style="font-size: 18px">Alumno</v-card-text>
-                                    </v-card>
-                                </v-layout>
-                            </v-flex>
-                            <!-- card de ganancias -->
-                            <v-flex
-                                    lg5
-                                    md7>
-                                <v-card
-                                        min-width="360"
-                                        color="grey lighten-3"
-                                        flat
-                                >
-                                    <v-list-item two-line>
-                                        <v-list-item-content>
-                                            <v-list-item-title
-                                                    class="dashboard-header-card">Progreso</v-list-item-title>
-                                            <v-list-item-subtitle
-                                                    class="dashboard-sub-card">Calorías Quemadas
-                                            </v-list-item-subtitle>
-                                        </v-list-item-content>
-                                    </v-list-item>
-                                    <v-card-text>
-                                        <v-layout align-center>
-                                            <v-flex xs10 id="revenues-number">
-                                                818 kcal
-                                            </v-flex>
-                                            <v-flex xs2>
-                                                <v-img
-                                                        src="https://img.icons8.com/cotton/2x/exercise.png"
-                                                        alt="Sunny image"
-                                                        width="92"
-                                                ></v-img>
-                                            </v-flex>
-                                        </v-layout>
-                                    </v-card-text>
-                                    <v-card-text class="dashboard-card-text">
-                                        De acuerdo a los datos proporcionados.
-                                    </v-card-text>
-                                </v-card>
-                            </v-flex>
-                        </v-layout>
-                    </v-flex>
-                    <!-- card días en leche -->
-                    <v-flex
-                            lg4
-                            md5
-                            :pr-2="$vuetify.breakpoint.lgAndUp"
-                            order-sm3
-                            order-md3
-                            sm12
-                            xs12
-                            mb-4>
-                        <v-card
-                                :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
-                                color="grey lighten-3"
-                                flat
-                        >
-                            <v-list-item two-line>
-                                <v-list-item-content>
-                                    <v-list-item-title
-                                            class="dashboard-header-card">Hipertrofia</v-list-item-title>
-                                    <v-list-item-subtitle
-                                            v-if="$vuetify.breakpoint.xsOnly"
-                                            class="dashboard-sub-card">Aumenta la masa muscular rápidamente</v-list-item-subtitle>
-                                    <v-list-item-subtitle
-                                            v-else
-                                            class="dashboard-sub-card">Cuádricep y Gastrognemios</v-list-item-subtitle>
-                                </v-list-item-content>
-                            </v-list-item>
-                            <v-card-text
-                                    class="dashboard-card-graphics">
-                                <v-layout
-                                        align-center
-                                        :column="$vuetify.breakpoint.xsOnly">
-                                    <v-flex
-                                            xs10
-                                            class="dashboard-card-number"
-                                            hidden-xs-only
-                                    >
-                                        5
-                                    </v-flex>
-                                    <v-flex xs2>
-                                        <v-img
-                                                src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
-                                                alt="Sunny image"
-                                                :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
-                                        ></v-img>
-                                    </v-flex>
-                                </v-layout>
-                            </v-card-text>
-                            <v-flex hidden-xs-only>
-                                <v-card-text class="dashboard-card-text">
-                                    Ejercicios por rutina
-                                </v-card-text>
-                            </v-flex>
-                        </v-card>
-                    </v-flex>
-                    <!-- card de vacas enfermas -->
-                    <v-flex
-                            lg4
-                            md5
-                            :pr-2="$vuetify.breakpoint.lgAndUp"
-                            :pl-2="$vuetify.breakpoint.lgAndUp"
-                            order-sm4
-                            order-md4
-                            sm12
-                            xs12
-                            mb-4>
-                        <v-card
-                                :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
-                                color="grey lighten-3"
-                                flat
-                        >
-                            <v-list-item two-line>
-                                <v-list-item-content>
-                                    <v-list-item-title
-                                            class="dashboard-header-card">Definición</v-list-item-title>
-                                    <v-list-item-subtitle
-                                            v-if="$vuetify.breakpoint.xsOnly"
-                                            class="dashboard-sub-card">Esculpe ese cuerpo baby!</v-list-item-subtitle>
-                                    <v-list-item-subtitle
-                                            v-else
-                                            class="dashboard-sub-card">Lumbares</v-list-item-subtitle>
-                                </v-list-item-content>
-                            </v-list-item>
-                            <v-card-text
-                                    class="dashboard-card-graphics">
-                                <v-layout
-                                        :column="$vuetify.breakpoint.xsOnly"
-                                        align-center>
-                                    <v-flex
-                                            xs10
-                                            class="dashboard-card-number"
-                                            hidden-xs-only>
-                                        2
-                                    </v-flex>
-                                    <v-flex xs2>
-                                        <v-img
-                                                src="https://images.vexels.com/media/users/3/145604/isolated/lists/a9f4f0e6742ac9d31c89364ce54bf3fd-cow-grazing-cartoon.png"
-                                                alt="Sunny image"
-                                                :width="$vuetify.breakpoint.smAndUp ? 92 : 65"
-                                        ></v-img>
-                                    </v-flex>
-                                </v-layout>
-                            </v-card-text>
-                            <v-flex hidden-xs-only>
-                                <v-card-text class="dashboard-card-text">
-                                    Prevenir lesiones y fortalecer el core
-                                </v-card-text>
-                            </v-flex>
-                        </v-card>
-                    </v-flex>
                 </v-layout>
             </v-flex>
+            <div class="text-center">
+                <v-btn @click="back" class="mx-2" fab dark color="light-blue darken-1">
+                    <v-icon dark>mdi-arrow-left</v-icon>
+                </v-btn>
+            </div>
         </v-layout>
     </v-container>
 </template>
@@ -336,41 +100,44 @@
     export default {
         name: "Routine",
         computed: {
-            paddockSelected() {
-                return 'Esto es lo que necesitas saber sobre tu físico.';
+            categories() {
+                console.log(this.$store.getters.getCategories);
+                return this.$store.getters.getCategories;
             },
+            routine() {
+                let routine = this.$store.getters.getRoutine;
+                return routine.charAt(0).toUpperCase() + routine.substring(1);
+            }
         },
         data: () => ({
-            showHeatText: false,
-            showGestationText: false,
-            showSickText: false,
-            showEarningsText: false,
-            showDimText: false,
-            dayHeat: '',
-            days: [
-                'Hoy',
-                'Ayer',
-                'Hace 3 días',
-                'Hace 4 días',
-                'Hace 5 días',
-                'Hace 6 días',
-            ],
-            icons: [
-                'mdi-numeric-0-circle',
-                'mdi-numeric-1-circle',
-                'mdi-numeric-2-circle',
-                'mdi-numeric-3-circle',
-                'mdi-numeric-4-circle',
-                'mdi-numeric-5-circle',
-            ],
-            subtitle: {
-                mobile: 'Go big or go home!',
-            },
         }),
         methods: {
-            season(val) {
-                return this.icons[val];
+            setExercises(tempCategory, index) {
+
+                let payload = {
+                    category: tempCategory.slice(2, tempCategory.length)
+                };
+
+                let planPayload = {
+                    plan: tempCategory[0]
+                };
+
+                let fullPlanPayload = {
+                    fullPlan: tempCategory
+                };
+
+                let planIndexPayload = {
+                    planIndex: index
+                };
+
+                this.$store.dispatch('loadExercises', payload);
+                this.$store.dispatch('loadPlan', planPayload);
+                this.$store.dispatch('loadFullPlan', fullPlanPayload);
+                this.$store.dispatch('loadPlanIndex', planIndexPayload);
             },
+            back() {
+                this.$router.go(-1)
+            }
         },
     };
 </script>

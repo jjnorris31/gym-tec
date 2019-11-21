@@ -55,14 +55,14 @@
             color="blue darken-4"
             rounded>
             <v-icon left>mdi-cow</v-icon>
-            Rutinas
+            Mi rutina
           </v-btn>
           <v-btn
             depressed
             to="/apphome/paddockform"
             dark
             color="blue darken-4"
-            rounded><v-icon left>mdi-barn</v-icon>Semana</v-btn>
+            rounded><v-icon left>mdi-barn</v-icon>Progreso</v-btn>
         </v-layout>
       </v-flex>
       <!-- cards -->
@@ -86,17 +86,18 @@
               :max-height="$vuetify.breakpoint.xsOnly ? 150 : 1240"
               color="grey lighten-3"
               flat
+              disabled
             >
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Pierna</v-list-item-title>
+                    class="dashboard-header-card">Guía</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">Lunes</v-list-item-subtitle>
+                    class="dashboard-sub-card">Guía de ejercicios</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
-                    class="dashboard-sub-card">Rutina de Pierna</v-list-item-subtitle>
+                    class="dashboard-sub-card">Guía</v-list-item-subtitle>
                 </v-list-item-content>
               </v-list-item>
               <v-card-text
@@ -140,10 +141,10 @@
             >
               <v-list-item two-line>
                 <v-list-item-content>
-                  <v-list-item-title class="dashboard-header-card">HIIT</v-list-item-title>
+                  <v-list-item-title class="dashboard-header-card">Cardio</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">Día 1</v-list-item-subtitle>
+                    class="dashboard-sub-card">Distancia durante el mes</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
                     class="dashboard-sub-card">Rutinas en el Sistema</v-list-item-subtitle>
@@ -176,7 +177,7 @@
                     step="1"
                     :max="5"
                     thumb-label="always"
-                    label="Inicio"
+                    label="Kilómetros"
                     ticks="always"
                     tick-size="4"
                   >
@@ -328,14 +329,15 @@
               :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
               color="grey lighten-3"
               flat
+              @click="fowardRoutines"
             >
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Pierna</v-list-item-title>
+                    class="dashboard-header-card">Rutinas</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">12 días</v-list-item-subtitle>
+                    class="dashboard-sub-card">Ejemplos de rutinas</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
                     class="dashboard-sub-card">Cuádricep y Gastrognemios</v-list-item-subtitle>
@@ -384,14 +386,15 @@
               :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
               color="grey lighten-3"
               flat
+              disabled
             >
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Espalda</v-list-item-title>
+                    class="dashboard-header-card">Nutrición</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">4</v-list-item-subtitle>
+                    class="dashboard-sub-card">Nutrición y dietas</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
                     class="dashboard-sub-card">Lumbares</v-list-item-subtitle>
@@ -437,14 +440,15 @@
               :min-width="$vuetify.breakpoint.smAndUp ? 250 : 100"
               color="grey lighten-3"
               flat
+              disabled
             >
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title
-                    class="dashboard-header-card">Brazo</v-list-item-title>
+                    class="dashboard-header-card">Herramientas</v-list-item-title>
                   <v-list-item-subtitle
                     v-if="$vuetify.breakpoint.xsOnly"
-                    class="dashboard-sub-card">6</v-list-item-subtitle>
+                    class="dashboard-sub-card">Dispositivos</v-list-item-subtitle>
                   <v-list-item-subtitle
                     v-else
                     class="dashboard-sub-card">Bíceps y Tríceps</v-list-item-subtitle>
@@ -516,13 +520,16 @@ export default {
       'mdi-numeric-5-circle',
     ],
     subtitle: {
-      mobile: 'Go Big or Go Home!',
+      mobile: 'Go big or go home!',
     },
   }),
   methods: {
     season(val) {
       return this.icons[val];
     },
+    fowardRoutines(){
+      this.$store.dispatch('goRoutines');
+    }
   },
 };
 </script>

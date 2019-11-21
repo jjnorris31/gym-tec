@@ -43,10 +43,20 @@ const router = new Router({
           component: () => import('./views/About.vue'),
         },
         {
-          path: 'rutinas',
-          name: 'rutinas',
-          component: () => import('./views/Rutinas.vue'),
-        }
+          path: 'routines',
+          name: 'routines',
+          component: () => import('./views/Routines.vue'),
+        },
+        {
+          path: 'categories',
+          name: 'categories',
+          component: () => import('./views/Category.vue'),
+        },
+        {
+          path: 'routine',
+          name: 'routine',
+          component: () => import('./views/IndividualRoutine.vue'),
+        },
       ],
     }
   ],

@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "dns": "^0.2.2",
     "firebase": "^7.1.0",
+    "http2": "^3.3.7",
     "vue": "^2.6.10",
     "vue-flip": "^0.3.0",
     "vue-router": "^3.0.3",
@@ -18,6 +20,7 @@
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "firebase-admin": "^8.8.0",
     "sass": "^1.17.4",
     "sass-loader": "^7.1.0",
     "vue-cli-plugin-vuetify": "^1.0.1",
