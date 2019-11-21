@@ -89,6 +89,7 @@ export default new Vuex.Store({
 
       let tempObject = {somePlan: updateObject};
       planRef.update(tempObject);
+      router.push('/apphome/categories');
     },
     goRoutines() {
       router.push('/apphome/routines');

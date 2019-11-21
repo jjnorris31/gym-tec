@@ -118,6 +118,7 @@
 </template>
 
 <script>
+    import router from "../router";
     export default {
         name: "IndividualRoutine",
         computed: {
