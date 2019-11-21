@@ -37,7 +37,7 @@
                             sm12
                             xs12
                             mb-4
-                            v-for="(item, index) in exercises"
+                            v-for="(item, index) in exercisesToLoad" :key="index"
                             mt-4
                             hidden-sm-and-up>
                         <v-card
@@ -49,13 +49,13 @@
                             <v-list-item two-line>
                                 <v-list-item-content>
                                     <v-list-item-title
-                                            class="dashboard-header-card">{{exercises[index].name}}</v-list-item-title>
+                                            class="dashboard-header-card">{{exercisesToLoad[index].name}}</v-list-item-title>
                                     <v-list-item-subtitle
                                             v-if="$vuetify.breakpoint.xsOnly"
-                                            class="dashboard-sub-card">Series: {{exercises[index].series}}</v-list-item-subtitle>
+                                            class="dashboard-sub-card">Series: {{exercisesToLoad[index].series}}</v-list-item-subtitle>
                                     <v-list-item-subtitle
                                             v-if="$vuetify.breakpoint.xsOnly"
-                                            class="dashboard-sub-card">Repeticiones: {{exercises[index].fromReps}} a {{exercises[index].toReps}}</v-list-item-subtitle>
+                                            class="dashboard-sub-card">Repeticiones: {{exercisesToLoad[index].fromReps}} a {{exercises[index].toReps}}</v-list-item-subtitle>
                                 </v-list-item-content>
                                 <v-list-item-avatar
                                         tile
@@ -121,6 +121,7 @@
         name: "IndividualRoutine",
         computed: {
             exercises() {
+                
                 return this.$store.getters.getExercises;
             },
             category() {
@@ -133,6 +134,7 @@
             series: '',
             fromReps: '',
             toReps: '',
+            exercisesToLoad: []
         }),
         methods: {
             back() {
@@ -147,8 +149,15 @@
                 };
                 this.$store.dispatch("saveNewExercise", payload);
                 this.dialog = false;
+            },
+            setExercisesToLoad() {
+                this.exercisesToLoad = this.$store.state.exercises;
             }
         },
+        mounted(){
+            this.setExercisesToLoad();
+            console.log(this.exercisesToLoad);
+        }
     };
 </script>
 

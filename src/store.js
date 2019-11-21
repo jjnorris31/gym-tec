@@ -12,7 +12,7 @@ export default new Vuex.Store({
     routines: '',
     categories: '',
     category: '',
-    exercises: '',
+    exercises: ['squads, squads'],
     fullPlan: '',
     planIndex: '',
   },
