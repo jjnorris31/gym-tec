@@ -138,6 +138,7 @@
               :min-width="$vuetify.breakpoint.smAndUp ? 360 : 100"
               color="grey lighten-3"
               flat
+              disabled
             >
               <v-list-item two-line>
                 <v-list-item-content>

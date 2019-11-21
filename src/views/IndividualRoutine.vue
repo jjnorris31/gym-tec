@@ -68,12 +68,13 @@
                 </v-layout>
             </v-flex>
             <div class="text-center">
-                <v-btn @click="back" class="mx-2" fab dark color="light-blue darken-1">
-                    <v-icon dark>mdi-arrow-left</v-icon>
-                </v-btn>
+
                 <v-row justify="center">
                     <v-dialog v-model="dialog" persistent max-width="600px">
                         <template v-slot:activator="{ on }">
+                            <v-btn @click="back" class="mx-2" fab dark color="light-blue darken-1">
+                                <v-icon dark>mdi-arrow-left</v-icon>
+                            </v-btn>
                             <v-btn v-on="on" class="mx-2" fab dark color="light-blue darken-1">
                                 <v-icon dark>mdi-plus</v-icon>
                             </v-btn>
@@ -117,6 +118,7 @@
 </template>
 
 <script>
+    import router from "../router";
     export default {
         name: "IndividualRoutine",
         computed: {
