@@ -11,12 +11,10 @@ function mountComponentWithProps (Component, propsData) {
   
   describe('Login.vue', () => {
     it('should be the correct login', () => {
-      const headingData = mountComponentWithProps(Login, { color: 'blue' });
-      const styleData = headingData.style.getPropertyValue('color');
+      const headingData = mountComponentWithProps(Login, { exercises: 'squads' });
+      console.log(headingData)
   
-      console.log(styleData)
-  
-      expect(styleData).toEqual('blue');
+      expect(this.state.exercises).toEqual(exercises);
     });
   
     it('should have the correct title', () => {
