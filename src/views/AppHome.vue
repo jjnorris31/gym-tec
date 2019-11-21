@@ -107,7 +107,7 @@ export default {
     drawer: false, // controla la visibilidad del navigation drawer
     items: [
       { title: 'Dashboard', icon: 'mdi-view-dashboard', route: '/dashboard' },
-      { title: 'Rutinas', icon: 'mdi-calendar-today' },
+      { title: 'Rutinas', icon: 'mdi-calendar-today', route: '/apphome/routines' },
       { title: 'Clases', icon: 'mdi-alarm' },
       { title: 'Recordatorios', icon: 'mdi-bell-ring' },
       { title: 'Cuenta', icon: 'mdi-account-details' },
