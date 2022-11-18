@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
+    "@vue/cli-service": "^5.0.8",
     "firebase-admin": "^8.8.0",
     "firebase-functions-test": "^0.1.7",
     "jest": "^24.9.0",
